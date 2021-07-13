@@ -1,6 +1,31 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { 
+  Link, Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverArrow,
+  PopoverBody,
+  PopoverHeader,
+  Input,
+  InputGroup,
+  InputRightElement,
+  InputRightAddon,
+  Button,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  Checkbox
+} from '@chakra-ui/react';
+import {
+  InfoIcon
+} from '@chakra-ui/icons';
+
+import StyledBox from '../components/StyledBox';
+import StyledFlex from '../components/StyledFlex';
 
 export default function Home() {
   return (
@@ -15,7 +40,66 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
+        <InputGroup width="507px">
+          <Input type="number" placeholder="Just an Input"/>
+          <InputRightElement>
+            <Button variant="maxBtn">Max</Button>
+          </InputRightElement>
+        </InputGroup>
+        <NumberInput>
+          <NumberInputField placeholder="a NumberInput"/>
+          <InputRightElement>
+            <Button variant="maxBtn">Max</Button>
+          </InputRightElement>
+        </NumberInput>
+        <StyledBox>
+          <Link onDark>Test</Link>
+          <NumberInput onDark>
+            <NumberInputField placeholder="a NumberInput"/>
+            <InputRightElement>
+              <Button variant="maxBtn">Max</Button>
+            </InputRightElement>
+          </NumberInput>
+        </StyledBox>
+        <StyledBox bg="interactive.white">
+          <InputGroup>
+            <Input type="number" placeholder="regular input"/>
+            <InputRightElement>
+              <Button variant="maxBtn">Max</Button>
+            </InputRightElement>
+          </InputGroup>
+          <NumberInput>
+            <NumberInputField placeholder="number input"/>
+            <InputRightElement>
+              <Button variant="maxBtn">Max</Button>
+            </InputRightElement>
+          </NumberInput>
+          <NumberInput isInvalid>
+            <NumberInputField placeholder="number input"/>
+            <InputRightElement>
+              <Button variant="maxBtn">Max</Button>
+            </InputRightElement>
+          </NumberInput>
+          <Checkbox>Awesome!</Checkbox>
+          <Checkbox isDisabled>Boo!</Checkbox>
+        </StyledBox>
+        <StyledBox bg="interactive.white">
+          <Link>Test</Link>
+          <Popover placement="top-start" trigger="hover">
+            <PopoverTrigger>
+              <InfoIcon color="interactive.purple"/>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverHeader>
+                Liquidation reserve
+              </PopoverHeader>
+              <PopoverArrow bg="interactive.dark"/>
+              <PopoverBody>
+                When a borrower opens a new trove, an amount of 10 LUSD is reserved and held back by the protocol as a compensation for the gas costs if the trove needs to be liquidated at some point
+              </PopoverBody>
+            </PopoverContent>
+          </Popover>
+        </StyledBox>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>

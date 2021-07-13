@@ -26,6 +26,8 @@ import Text from './components/text';
 import Heading from './components/heading';
 import Popover from './components/popover';
 import Checkbox from './components/checkbox';
+import Input from './components/input';
+import NumberInput from './components/number-input';
 
 const overrides = {
     colors,
@@ -38,7 +40,9 @@ const overrides = {
         Text,
         Heading,
         Popover,
-        Checkbox
+        Checkbox,
+        Input,
+        NumberInput
     }
 };
 

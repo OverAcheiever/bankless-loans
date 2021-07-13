@@ -70,6 +70,17 @@ const Button = {
                 bg: "interactive.gray",
                 color: "interactive.transparentWhite"
             }
+        },
+        maxBtn: {
+            height: "16px",
+            width: "28px",
+            fontSize: "14px",
+            fontWeight: "500",
+            borderRadius: "13px",
+            textTransform: "uppercase",
+            border: "1.5px solid",
+            borderColor: "interactive.dark",
+            padding: "8px 11px"
         }
     },
     defaultProps: {}
