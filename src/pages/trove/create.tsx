@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Box, Stack, Heading, Flex } from '@chakra-ui/react'
 import StyledBox from '../../components/StyledBox'
-import BorrowProvider, { BorrowContext } from './borrowContext'
+import TroveProvider, { TroveContext } from './TroveContext'
 import Stepper from '../../components/Steps'
 
-const BorrowFormHeader = () => {
+const TroveHeader = () => {
   return (
     <StyledBox bg='auto' variant='section'
         borderRadius='18px'>
@@ -20,8 +20,8 @@ const BorrowFormHeader = () => {
   )
 }
 
-const BorrowForm = () => {
-  const {loan, addLoan } = useContext(BorrowContext)
+const TroveForm = () => {
+  const {loan, addLoan } = useContext(TroveContext)
 
   return (
     <StyledBox
@@ -33,14 +33,14 @@ const BorrowForm = () => {
       w={["100%", "70%"]}
       bg="gray"
     >
-      <BorrowFormHeader />
+      <TroveHeader />
       <div>hi, i am a form</div>
     </StyledBox>
   )
 }
 
-const BorrowSidebar = () => {
-  const {loan, addLoan } = useContext(BorrowContext)
+const TroveSidebar = () => {
+  const {loan, addLoan } = useContext(TroveContext)
 
   return (
     <Flex
@@ -96,20 +96,20 @@ const BorrowSidebar = () => {
   )
 }
 
-const BorrowCreate = () => (
-  <BorrowProvider loan={""} addLoan={function (name: string): void {
+const TroveCreate = () => (
+  <TroveProvider loan={""} addLoan={function (name: string): void {
     throw new Error("Function not implemented.")
   } }>
     <Flex
       h='100%'
       direction="row"
     >
-      <BorrowForm />
-      <BorrowSidebar />
+      <TroveForm />
+      <TroveSidebar />
     </Flex>
-  </BorrowProvider>
+  </TroveProvider>
 )
 
-export default BorrowCreate
+export default TroveCreate
 
 

@@ -1,6 +1,3 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import React, { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../state/hooks';
 import { selectLiquityState } from '../state/home/hooks';

@@ -47,7 +47,7 @@ export default function Navbar() {
                 ml={{base: 'auto', md: '0px'}}
                 spacing={8}
             >
-                <Link href='/borrow/create'>
+                <Link href='/trove/create'>
                     Borrow
                 </Link>
                 <Link href='/deposit'>
