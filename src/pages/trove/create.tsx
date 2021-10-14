@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Box, Stack, Heading, Flex } from '@chakra-ui/react'
+import { Box, Stack, Heading, Flex, Input, Button } from '@chakra-ui/react'
 import StyledBox from '../../components/StyledBox'
 import TroveProvider, { TroveContext } from './TroveContext'
 import Stepper from '../../components/Steps'
@@ -95,6 +95,32 @@ const TroveSidebar = () => {
     </Flex>
   )
 }
+
+export const EditableRow = () => ({
+  label,
+  inputID,
+  unit,
+  amount
+}) => {
+    <Flex flexDirection='row'
+      color='black'
+      justifyContent="space-between"
+      alignContent='flex-start'
+    >
+      <Input
+        autoFocus
+        id={inputID}
+        type="number"
+        step="any"
+        defaultValue={amount}
+        onChange={e => {
+        }}
+        onBlur={() => {
+        }}
+        variant="editor"
+      />
+    </Flex>
+};
 
 const TroveCreate = () => (
   <TroveProvider loan={""} addLoan={function (name: string): void {
